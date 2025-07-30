@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  background-color: #111;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  overflow-y: auto; /* rolagem normal */
+}
+
+.produtos-container {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ff4500;
+}
+
+.filtros-ordenar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filtros button {
+  background: transparent;
+  border: 2px solid #ff4500;
+  padding: 0.4rem 1rem;
+  color: #ff4500;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.filtros button.ativo,
+.filtros button:hover {
+  background: #ff4500;
+  color: #fff;
+}
+
+.ordenar label {
+  font-size: 0.95rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ordenar input[type="checkbox"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: #1b1b1b;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0.3rem 0 1rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.card button {
+  background-color: #ff4500;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #e03e00;
+}
