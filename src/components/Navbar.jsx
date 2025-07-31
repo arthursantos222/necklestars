@@ -1,23 +1,25 @@
-import { Link, useLocation } from "react-router-dom";
-import "../styles/Navbar.css";
+import { Link } from "react-router-dom";
+import { useCarrinho } from "../context/CarrinhoContext";
+import "../styles/navbar.css";
 
-export default function Navbar() {
-  const location = useLocation();
+function Navbar() {
+  const { carrinho } = useCarrinho();
+  const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
 
   return (
     <nav className="navbar">
-      <div className="logo">Necklestars</div>
-      <ul className="nav-links">
-        <li className={location.pathname === "/" ? "active" : ""}>
-          <Link to="/">Home</Link>
-        </li>
-        <li className={location.pathname === "/produtos" ? "active" : ""}>
-          <Link to="/produtos">Produtos</Link>
-        </li>
-        <li className={location.pathname === "/carrinho" ? "active" : ""}>
-          <Link to="/carrinho">Carrinho</Link>
-        </li>
-      </ul>
+      <Link to="/" className="logo">Necklestars</Link>
+      <div className="links">
+        <Link to="/">Home</Link>
+        <Link to="/produtos">Produtos</Link>
+        <Link to="/contato">Contato</Link>
+        <Link to="/carrinho" className="cart-icon">
+          🛒
+          {totalItens > 0 && <span className="cart-count">{totalItens}</span>}
+        </Link>
+      </div>
     </nav>
   );
 }
+
+export default Navbar;

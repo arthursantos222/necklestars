@@ -6,19 +6,11 @@ function Home() {
 
   return (
     <section className="home-section">
-      <div className="content">
-        <h1 className="logo-text">NECKLESTARS</h1>
-        <h2 className="slogan">Estilo de rua pra quem vive nas ruas.</h2>
-        <button className="btn-explore" onClick={() => navigate("/produtos")}>
-          Explore nossos produtos
-        </button>
-      </div>
-
-      <div className="contact-info">
-        <p>@necklestars</p>
-        <p>Email: contato@necklestars.com</p>
-        <p>Instagram: <a href="https://instagram.com/necklestars" target="_blank" rel="noopener noreferrer">@necklestars</a></p>
-      </div>
+      <h2 className="titulo-home">Bem-vindo à Necklestars</h2>
+      <p className="descricao-home">Estilo de rua para quem vive nas ruas.</p>
+      <button className="btn-explore" onClick={() => navigate("/produtos")}>
+        Explore nossos produtos
+      </button>
     </section>
   );
 }

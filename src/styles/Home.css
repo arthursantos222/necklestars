@@ -1,71 +1,33 @@
 .home-section {
-    height: 100vh;
-    background-image: url("https://images.unsplash.com/photo-1520975918108-c2096f423411");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    padding: 2rem;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-  
-  .content {
-    text-align: center;
-    margin-top: 4rem;
-  }
-  
-  .logo-text {
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 5px #000;
-  }
-  
-  .slogan {
-    font-size: 1.2rem;
-    margin: 1rem 0 2rem;
-    text-shadow: 1px 1px 3px #000;
-  }
-  
-  .btn-explore {
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    padding: 0.8rem 1.6rem;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 30px;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  .btn-explore:hover {
-    background-color: #e65c00;
-    transform: scale(1.05);
-  }
-  
-  .contact-info {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #fff;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  }
-  
-  .contact-info a {
-    color: #ffcc70;
-    text-decoration: none;
-  }
-  
-  .contact-info a:hover {
-    color: #ffa500;
-    text-decoration: underline;
-  }
-  
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.titulo-home {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.descricao-home {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: white;
+}
+
+.btn-explore {
+  padding: 12px 24px;
+  background-color: #ff6600; /* Laranja forte sempre */
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-explore:hover {
+  background-color: #cc5200; /* Laranja mais escuro no hover */
+}

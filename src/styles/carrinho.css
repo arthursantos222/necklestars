@@ -1,76 +1,114 @@
 .carrinho-container {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 0 1rem;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .carrinho-container h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #ff4500;
-  }
-  
-  .item-carrinho {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    background-color: #222;
-    padding: 1rem;
-    border-radius: 10px;
-    align-items: center;
-  }
-  
-  .item-carrinho img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .item-carrinho div {
-    flex: 1;
-  }
-  
-  .item-carrinho h3 {
-    margin: 0 0 0.5rem;
-  }
-  
-  .item-carrinho p {
-    margin: 0.2rem 0;
-  }
-  
-  .item-carrinho button {
-    margin-top: 0.5rem;
-    background-color: #ff4500;
-    border: none;
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .item-carrinho button:hover {
-    background-color: #e03e00;
-  }
-  
-  .limpar-btn {
-    display: block;
-    margin: 2rem auto 0;
-    background-color: #ff4500;
-    border: none;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .limpar-btn:hover {
-    background-color: #e03e00;
-  }
-  
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #111; /* Fundo preto */
+  color: white;
+  border-radius: 8px;
+}
+
+.itens-carrinho {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-carrinho {
+  display: flex;
+  gap: 1rem;
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.img-carrinho {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 6px;
+  flex-shrink: 0; /* Evita encolher */
+}
+
+.info-carrinho {
+  flex-grow: 1;
+}
+
+.quantidade-controle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.quantidade-controle button {
+  background-color: #ff6600;
+  border: none;
+  color: black;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.quantidade-controle button:hover {
+  background-color: #cc5200;
+}
+
+.botao-remover {
+  background-color: #aa2222;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.botao-remover:hover {
+  background-color: #880000;
+}
+
+.resumo-carrinho {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.botao-finalizar {
+  background-color: #ff6600;
+  border: none;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  min-width: 140px;
+}
+
+.botao-finalizar:hover {
+  background-color: #cc5200;
+}
+
+.botao-voltar {
+  background-color: #555; /* tom cinza escuro */
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  min-width: 140px;
+}
+
+.botao-voltar:hover {
+  background-color: #333;
+}

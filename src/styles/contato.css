@@ -1,0 +1,72 @@
+.contato-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    background-color: #111; /* Fundo preto */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.6);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .contato-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ff6600;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+  
+  .contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contato-form label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ff6600;
+  }
+  
+  .contato-form input,
+  .contato-form textarea {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #222;
+    color: white;
+    resize: vertical;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contato-form input:focus,
+  .contato-form textarea:focus {
+    outline: none;
+    background-color: #333;
+    box-shadow: 0 0 5px #ff6600;
+  }
+  
+  .contato-form textarea {
+    min-height: 120px;
+  }
+  
+  .botao-enviar {
+    background-color: #ff6600;
+    border: none;
+    color: black;
+    font-weight: 700;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  
+  .botao-enviar:hover {
+    background-color: #cc5200;
+  }
+  
