@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Produtos from "./pages/Produtos";
 import Carrinho from "./pages/Carrinho";
 import Contato from "./pages/Contato";
 import Checkout from "./pages/Checkout";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"; // ✅ Agora funciona
+import Footer from "./components/Footer";
 import { CarrinhoProvider } from "./context/CarrinhoContext";
 import "./styles/global.css";
 
@@ -21,7 +21,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/contato" element={<Contato />} />
         </Routes>
-        <Footer /> {/* ✅ Rodapé visível em todas as páginas */}
+        <Footer />
       </Router>
     </CarrinhoProvider>
   );
