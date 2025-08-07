@@ -1,4 +1,3 @@
-/* Layout geral */
 .produto-lista {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -6,9 +5,9 @@
   padding: 2rem 3rem;
   max-width: 1300px;
   margin: 2rem auto;
+  justify-content: center;
 }
 
-/* Card do produto */
 .produto-card {
   background: #1a1a1a;
   border-radius: 10px;
@@ -49,7 +48,6 @@
   margin: 0.3rem 0 1rem;
 }
 
-/* Botão de compra */
 .botao-comprar {
   background-color: #ff6600;
   color: black;
@@ -66,7 +64,6 @@
   background-color: #cc5200;
 }
 
-/* Responsivo para celular */
 @media (max-width: 600px) {
   .produto-lista {
     padding: 1rem;

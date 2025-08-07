@@ -1,36 +1,30 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-
-import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Produtos from "./pages/Produtos";
 import Carrinho from "./pages/Carrinho";
-import Checkout from "./pages/Checkout";
 import Contato from "./pages/Contato";
-
+import Checkout from "./pages/Checkout";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"; // ✅ Agora funciona
 import { CarrinhoProvider } from "./context/CarrinhoContext";
+import "./styles/global.css";
 
-export default function App() {
+function App() {
   return (
     <CarrinhoProvider>
-      <div style={{
-        minHeight: "100vh",
-        backgroundColor: "#111", // Fundo preto escuro
-        color: "white",           // Texto branco para todo o app
-        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-        paddingBottom: "2rem"
-      }}>
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/produtos" element={<Produtos />} />
-            <Route path="/carrinho" element={<Carrinho />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </Router>
-      </div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/produtos" element={<Produtos />} />
+          <Route path="/carrinho" element={<Carrinho />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/contato" element={<Contato />} />
+        </Routes>
+        <Footer /> {/* ✅ Rodapé visível em todas as páginas */}
+      </Router>
     </CarrinhoProvider>
   );
 }
+
+export default App;

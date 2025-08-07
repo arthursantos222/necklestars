@@ -1,108 +1,141 @@
-import { useState } from "react";
-import { useCarrinho } from "../context/CarrinhoContext";
-import "../styles/checkout.css";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../styles/checkout.css';
 
-export default function Checkout() {
-  const { carrinho, limparCarrinho } = useCarrinho();
-  const [pagamentoConcluido, setPagamentoConcluido] = useState(false);
-  const [nomeCartao, setNomeCartao] = useState("");
-  const [numeroCartao, setNumeroCartao] = useState("");
-  const [validade, setValidade] = useState("");
-  const [cvv, setCvv] = useState("");
+const Checkout = () => {
+  const [metodoPagamento, setMetodoPagamento] = useState('cartao');
+  const [pedidoFinalizado, setPedidoFinalizado] = useState(false);
+  const navigate = useNavigate();
 
-  const total = carrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
-
-  const handlePagamento = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Aqui você faria validação e integração com um gateway real
-    // Para simular, só vamos marcar como pago e limpar carrinho depois
+    // Aqui você pode fazer a chamada real ao backend, se quiser
 
-    if (!nomeCartao || !numeroCartao || !validade || !cvv) {
-      alert("Preencha todos os dados do cartão.");
-      return;
-    }
+    setPedidoFinalizado(true);
 
-    setPagamentoConcluido(true);
-    limparCarrinho();
+    // Depois de 3 segundos, redireciona para Produtos
+    setTimeout(() => {
+      navigate('/produtos');
+    }, 3000);
   };
 
-  if (carrinho.length === 0 && !pagamentoConcluido) {
+  if (pedidoFinalizado) {
     return (
-      <div className="checkout-container">
-        <h2>Seu carrinho está vazio.</h2>
-      </div>
-    );
-  }
-
-  if (pagamentoConcluido) {
-    return (
-      <div className="checkout-container">
-        <h2>Pagamento concluído com sucesso! 🎉</h2>
-        <p>Obrigado pela sua compra na Necklestars.</p>
+      <div className="checkout-container" style={{ textAlign: 'center', padding: '4rem' }}>
+        <h2>Compra finalizada com sucesso! 🎉</h2>
+        <p>Obrigado pela sua compra. Você será redirecionado para a página de produtos.</p>
       </div>
     );
   }
 
   return (
     <div className="checkout-container">
-      <h2>Resumo do Pedido</h2>
-      <ul>
-        {carrinho.map((item) => (
-          <li key={item.id}>
-            {item.nome} x {item.quantidade} — R$ {(item.preco * item.quantidade).toFixed(2)}
-          </li>
-        ))}
-      </ul>
-      <p><strong>Total: R$ {total.toFixed(2)}</strong></p>
+      <h2>Finalizar Compra</h2>
 
-      <h3>Dados do Cartão</h3>
-      <form onSubmit={handlePagamento} className="form-pagamento">
-        <label>
-          Nome no Cartão:
-          <input
-            type="text"
-            value={nomeCartao}
-            onChange={(e) => setNomeCartao(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Número do Cartão:
-          <input
-            type="text"
-            value={numeroCartao}
-            onChange={(e) => setNumeroCartao(e.target.value)}
-            maxLength={16}
-            required
-          />
-        </label>
-        <label>
-          Validade:
-          <input
-            type="text"
-            placeholder="MM/AA"
-            value={validade}
-            onChange={(e) => setValidade(e.target.value)}
-            maxLength={5}
-            required
-          />
-        </label>
-        <label>
-          CVV:
-          <input
-            type="password"
-            value={cvv}
-            onChange={(e) => setCvv(e.target.value)}
-            maxLength={3}
-            required
-          />
-        </label>
+      <form className="checkout-form" onSubmit={handleSubmit}>
+        {/* Informações do comprador */}
+        <fieldset>
+          <legend>Informações do Comprador</legend>
+          <input type="text" placeholder="Nome completo" required />
+          <input type="email" placeholder="E-mail" required />
+          <input type="text" placeholder="Endereço" required />
+          <input type="text" placeholder="CEP" required />
+          <input type="text" placeholder="Cidade" required />
+          <input type="text" placeholder="Estado" required />
+        </fieldset>
 
-        <button type="submit" className="botao-finalizar">
-          Finalizar Pagamento
-        </button>
+        {/* Seleção do método de pagamento */}
+        <fieldset>
+          <legend>Selecione o Método de Pagamento</legend>
+          <div className="pagamento-opcoes">
+            <label>
+              <input
+                type="radio"
+                name="pagamento"
+                value="cartao"
+                checked={metodoPagamento === 'cartao'}
+                onChange={() => setMetodoPagamento('cartao')}
+              />
+              Cartão de Crédito
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="pagamento"
+                value="pix"
+                checked={metodoPagamento === 'pix'}
+                onChange={() => setMetodoPagamento('pix')}
+              />
+              Pix
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="pagamento"
+                value="boleto"
+                checked={metodoPagamento === 'boleto'}
+                onChange={() => setMetodoPagamento('boleto')}
+              />
+              Boleto Bancário
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="pagamento"
+                value="transferencia"
+                checked={metodoPagamento === 'transferencia'}
+                onChange={() => setMetodoPagamento('transferencia')}
+              />
+              Transferência Bancária
+            </label>
+          </div>
+        </fieldset>
+
+        {/* Informações específicas do método */}
+        {metodoPagamento === 'cartao' && (
+          <fieldset>
+            <legend>Pagamento - Cartão de Crédito</legend>
+            <input type="text" placeholder="Número do Cartão" required />
+            <input type="text" placeholder="Nome no Cartão" required />
+            <div className="card-details">
+              <input type="text" placeholder="Validade (MM/AA)" required />
+              <input type="text" placeholder="CVV" required />
+            </div>
+          </fieldset>
+        )}
+
+        {metodoPagamento === 'pix' && (
+          <fieldset>
+            <legend>Pagamento - Pix</legend>
+            <p>
+              Após finalizar, você receberá o código Pix para pagamento no seu e-mail.
+            </p>
+          </fieldset>
+        )}
+
+        {metodoPagamento === 'boleto' && (
+          <fieldset>
+            <legend>Pagamento - Boleto Bancário</legend>
+            <p>
+              Após finalizar, você receberá o boleto para pagamento no seu e-mail.
+            </p>
+          </fieldset>
+        )}
+
+        {metodoPagamento === 'transferencia' && (
+          <fieldset>
+            <legend>Pagamento - Transferência Bancária</legend>
+            <p>
+              Dados para transferência serão enviados para seu e-mail após finalizar o pedido.
+            </p>
+          </fieldset>
+        )}
+
+        <button type="submit" className="btn-finalizar">Finalizar Pedido</button>
       </form>
     </div>
   );
-}
+};
+
+export default Checkout;

@@ -1,114 +1,109 @@
-.carrinho-container {
+.carrinho {
+  padding: 2rem;
   max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background-color: #111; /* Fundo preto */
+  margin: 0 auto;
   color: white;
-  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.itens-carrinho {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.carrinho h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.card-carrinho {
+.carrinho-item {
   display: flex;
   gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
   background-color: #222;
   padding: 1rem;
-  border-radius: 8px;
-  align-items: center;
+  border-radius: 10px;
 }
 
-.img-carrinho {
+.carrinho-item img {
   width: 120px;
   height: 120px;
-  object-fit: contain;
-  border-radius: 6px;
-  flex-shrink: 0; /* Evita encolher */
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.info-carrinho {
-  flex-grow: 1;
+.carrinho-info {
+  flex: 1;
 }
 
-.quantidade-controle {
+.carrinho-info h4 {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.carrinho-info p {
+  margin: 0 0 0.5rem;
+  color: #ff6600;
+  font-weight: bold;
+}
+
+.carrinho-quantidade {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 0.5rem;
 }
 
-.quantidade-controle button {
-  background-color: #ff6600;
+.carrinho-quantidade input {
+  width: 60px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
   border: none;
-  color: black;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.quantidade-controle button:hover {
-  background-color: #cc5200;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .botao-remover {
-  background-color: #aa2222;
-  border: none;
+  background-color: crimson;
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border: none;
+  padding: 0.6rem 1rem;
   cursor: pointer;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  transition: background-color 0.3s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .botao-remover:hover {
-  background-color: #880000;
+  background-color: darkred;
 }
 
-.resumo-carrinho {
-  margin-top: 1.5rem;
+.carrinho-botoes {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
   gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
   flex-wrap: wrap;
 }
 
-.botao-finalizar {
-  background-color: #ff6600;
-  border: none;
-  color: black;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  min-width: 140px;
-}
-
-.botao-finalizar:hover {
-  background-color: #cc5200;
-}
-
-.botao-voltar {
-  background-color: #555; /* tom cinza escuro */
-  border: none;
+.botao-continuar {
+  background-color: #555;
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  border: none;
+  padding: 0.8rem 1.5rem;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  min-width: 140px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.botao-voltar:hover {
-  background-color: #333;
+.botao-continuar:hover {
+  background-color: #777;
+}
+
+.botao-checkout {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.botao-checkout:hover {
+  background-color: #218838;
 }
