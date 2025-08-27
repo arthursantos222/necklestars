@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import { CarrinhoProvider } from "./context/CarrinhoContext";
 import "./styles/global.css";
 
+
 function App() {
   return (
     <CarrinhoProvider>

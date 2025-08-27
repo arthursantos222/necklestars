@@ -64,7 +64,8 @@
   background-color: #cc5200;
 }
 
-@media (max-width: 600px) {
+/* Responsivo */
+@media (max-width: 768px) {
   .produto-lista {
     padding: 1rem;
     gap: 1rem;

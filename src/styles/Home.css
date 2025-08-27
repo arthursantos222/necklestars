@@ -1,33 +1,48 @@
 .home-section {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
   text-align: center;
-  margin-top: 3rem;
+  color: white;
 }
 
 .titulo-home {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: white;
 }
 
 .descricao-home {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .btn-explore {
-  padding: 12px 24px;
-  background-color: #ff6600; /* Laranja forte sempre */
+  background-color: #ff6600;
   color: black;
-  font-weight: bold;
-  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
   border: none;
-  border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .btn-explore:hover {
-  background-color: #cc5200; /* Laranja mais escuro no hover */
+  background-color: #cc5200;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .titulo-home {
+    font-size: 2rem;
+  }
+
+  .descricao-home {
+    font-size: 1rem;
+  }
+
+  .btn-explore {
+    width: 100%;
+    display: inline-block;
+  }
 }
